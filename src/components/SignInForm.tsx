@@ -1,4 +1,4 @@
-import { useState, ChangeEvent, FormEvent, useEffect, SetStateAction } from 'react';
+import { useState, ChangeEvent, FormEvent, SetStateAction } from 'react';
 import Image from 'next/image';
 
 interface FormData {
@@ -116,7 +116,7 @@ export default function SignIn({onSignInSuccess , onHandleUserType, onSignOut}:S
             <option value="Staff" className='text-black rounded-xl'>Staff</option>
           </select>
         </div>
-        <button type="submit" className='bg-purple-600 rounded-xl py-4 px-6'>Sign In</button>
+        <button type="submit" className='bg-purple-600 hover:bg-purple-300 rounded-xl py-4 px-6 border-4 border-white'>Sign In</button>
       </form>
       {errorMessage && <p>{errorMessage}</p>}
     </div>

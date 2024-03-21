@@ -11,7 +11,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
   try {
     const { name, email, userType }: SignInData = await req.json();
 
-    const serverResponse = await fetch('http://localhost:8080/api/signin', {
+    const serverResponse = await fetch('http://localhost:8080/signin', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

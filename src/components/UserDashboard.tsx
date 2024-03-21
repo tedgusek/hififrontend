@@ -146,7 +146,7 @@ const UserDashboard: React.FC<UserDashboardProps> = ({ onSignOut }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className='w-80 h-auto p-4 bg-slate-500 border-white border-4 rounded-xl'>
+    <form onSubmit={handleSubmit} className='w-80 h-auto p-4 bg-slate-600 border-white border-4 rounded-xl'>
       <div className="z-10 max-w-5xl w-full items-center font-mono text-sm lg:flex">
         <p className="left-auto top-10 flex flex-col items-center mb-4">
           User Dashboard
