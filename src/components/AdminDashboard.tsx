@@ -1,13 +1,11 @@
-'use client'
 import Image from "next/image";
-import SupportForm from "@/components/UserDashboard";
 
-export default function Page() {
+export default function AdminDashboard() {
     return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
         <div className="z-10 max-w-5xl w-full items-center font-mono text-sm lg:flex">
           <p className="left-auto top-10 flex flex-col items-center mb-4">
-            User Dashboard
+            Admin Dashboard
             <Image
               src="/hifibridge_logo.jpeg"
               alt="HiFi Logo Purple arrow starting in bottom left corner of white square box pointing up to the right"
@@ -15,10 +13,8 @@ export default function Page() {
               height={50}
               className="mt-4"    
             />  
-          </p>
-        
+          </p> 
         </div>
-        <SupportForm />
     </main>
     );
 }

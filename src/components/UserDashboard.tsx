@@ -1,8 +1,15 @@
 import axios from 'axios';
 import React, { useState, ChangeEvent, FormEvent } from 'react';
+import Image from 'next/image';
 
-function SupportForm() {
-  const [formData, setFormData] = useState({
+interface FormData {
+  email: string;
+  name: string;
+  description: string;
+}
+
+function UserDashboard() {
+  const [formData, setFormData] = useState<FormData>({
     email: '',
     name: '',
     description: ''
@@ -29,12 +36,25 @@ function SupportForm() {
 
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className='w-80 h-auto p-4 bg-slate-500 border-white border-4 rounded-xl'>
+       <div className="z-10 max-w-5xl w-full items-center font-mono text-sm lg:flex">
+          <p className="left-auto top-10 flex flex-col items-center mb-4">
+            User Dashboard
+            <Image
+              src="/hifibridge_logo.jpeg"
+              alt="HiFi Logo Purple arrow starting in bottom left corner of white square box pointing up to the right"
+              width={50}
+              height={50}
+              className="mt-4"    
+            />  
+          </p>
+        
+        </div>
       <div  className='flex flex-col items-center'>
         <div className='py-2'>
-        <label htmlFor="email">Email:</label>
+        <label htmlFor="email">Email: </label>
         <input 
-          className='text-black'
+          className='text-black rounded-xl'
           type="email" 
           id="email" 
           name="email" 
@@ -44,9 +64,9 @@ function SupportForm() {
         />
       </div>
       <div className='py-2'>
-        <label htmlFor="name">Name:</label>
+        <label htmlFor="name">Name: </label>
         <input 
-          className='text-black'
+          className='text-black rounded-xl'
           type="text" 
           id="name" 
           name="name" 
@@ -56,9 +76,9 @@ function SupportForm() {
         />
       </div>
       <div className='py-2'>
-        <label htmlFor="description">Description:</label>
+        <label htmlFor="description">Description: </label>
         <textarea 
-          className='text-black'
+          className='text-black rounded-xl h-40'
           id="description" 
           name="description" 
           value={formData.description} 
@@ -66,10 +86,10 @@ function SupportForm() {
           required 
         />
       </div>
-      <button type="submit">Submit</button>
+      <button type="submit" className='border-white rounded-xl border-4 bg-purple-600 hover:bg-purple-300 py-2 px-6'>Submit</button>
       </div>
     </form>
   );
 }
 
-export default SupportForm;
+export default UserDashboard;
