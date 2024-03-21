@@ -1,6 +1,12 @@
 import Image from "next/image";
+import SignOutButton from "./SignOutButton";
 
-export default function AdminDashboard() {
+interface AdminDashboardProps {
+    onSignOut: () => void;
+  }
+
+// export default function AdminDashboard() {
+    const AdminDashboard: React.FC<AdminDashboardProps> = ({ onSignOut }) => {
     return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
         <div className="z-10 max-w-5xl w-full items-center font-mono text-sm lg:flex">
@@ -14,7 +20,10 @@ export default function AdminDashboard() {
               className="mt-4"    
             />  
           </p> 
-        </div>
+            </div>
+            <SignOutButton onClick={onSignOut} />
     </main>
     );
-}
+    }
+
+export default AdminDashboard;

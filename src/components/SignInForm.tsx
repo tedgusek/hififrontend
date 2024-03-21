@@ -1,6 +1,5 @@
 import { useState, ChangeEvent, FormEvent, useEffect, SetStateAction } from 'react';
 import Image from 'next/image';
-// import { useRouter } from 'next/router';
 
 interface FormData {
   name: string;
@@ -9,17 +8,17 @@ interface FormData {
 }
 interface SignInProps {
     onSignInSuccess: () => void;
+    onSignOut: () => void;
     onHandleUserType: (type: SetStateAction<null>) => void;
 }
 
-export default function SignIn({onSignInSuccess , onHandleUserType}:SignInProps) {
+export default function SignIn({onSignInSuccess , onHandleUserType, onSignOut}:SignInProps) {
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
     userType: 'User'
   });
     const [errorMessage, setErrorMessage] = useState<string>(''); // State to store error message
-    // const router = useRouter();
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
