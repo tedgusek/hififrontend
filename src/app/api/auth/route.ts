@@ -1,5 +1,10 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextRequest, NextResponse } from 'next/server';
 import fetch from 'node-fetch';
+import dotenv from 'dotenv';
+
+dotenv.config();
+
+const URL: string = process.env.URL ?? 'http://localhost:8080';
 
 interface SignInData {
   name: string;
@@ -11,12 +16,12 @@ export async function POST(req: NextRequest, res: NextResponse) {
   try {
     const { name, email, userType }: SignInData = await req.json();
 
-    const serverResponse = await fetch('http://localhost:8080/signin', {
+    const serverResponse = await fetch(`${URL}/signin`, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ name, email, userType })
+      body: JSON.stringify({ name, email, userType }),
     });
 
     if (serverResponse.ok) {
